@@ -1,34 +1,44 @@
 #include<stdio.h>
 main()
-{
+{	
 	int a;
-	printf("Enter your score(0-100):\n");
+	printf("Enter your score(1-100):\n");
 	scanf("%d", &a);
 	
-		if (a<0 || a>100)
+	if(a<0 || a>100)
+	{
+		printf("Invalid score");
+	}
+	else
+	{
+		if(a>=85)
 		{
-			printf("Invalid score");
-			return 0;
+			printf("Grade A");
 		}
-			if (a>=85 && a<=100)
+		else
+		{
+			if(a>=70 && a<=84)
 			{
-				printf("Grade A");
+				printf("Grade B");
 			}
-			     else if (a>=70 && a<=84)
-			     {
-			      	printf("Grade B");
-			     }
-			     else if (a>=55 && a<=69)
-			     {
-			     	printf("Grade C");
-			     }
-			     else if (a>=40 && a<=54)
-			     {
-			     	printf("Grade D");
-			     }
-			else if (a<40)
+			else
 			{
-				printf("Grade F");
+				if(a>=55 && a<=69)
+				{
+					printf("Grade C");
+				}
+				else
+				{
+					if(a>=40 && a<=54)
+					{
+						printf("Grade D");
+					}
+					else
+					{
+						printf("Grade F");
+					}
+				}
 			}
-	return 0;
+		}
+	}
 }
